@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: IsStone
   m_EditorClassIdentifier: 
   _QuestionText: 
-  _QuestionIsAbout: {fileID: 11400000, guid: e5b055064d69c0442a92e344dd90048e, type: 2}
+  _QuestionIsAbout: {fileID: 11400000, guid: a6093542d43228e46835af758d22fd17, type: 2}
   _SelectedPopupOption: 9

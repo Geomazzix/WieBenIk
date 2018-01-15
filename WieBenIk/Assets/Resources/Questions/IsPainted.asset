@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: IsPainted
   m_EditorClassIdentifier: 
   _QuestionText: 
-  _QuestionIsAbout: {fileID: 11400000, guid: 3c1aeb668b7e2c044bafd931ae8d07e7, type: 2}
+  _QuestionIsAbout: {fileID: 11400000, guid: e5b055064d69c0442a92e344dd90048e, type: 2}
   _SelectedPopupOption: 7

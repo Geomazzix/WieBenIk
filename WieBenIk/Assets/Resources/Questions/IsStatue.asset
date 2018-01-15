@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: IsStatue
   m_EditorClassIdentifier: 
   _QuestionText: 
-  _QuestionIsAbout: {fileID: 11400000, guid: a6093542d43228e46835af758d22fd17, type: 2}
+  _QuestionIsAbout: {fileID: 11400000, guid: 0a3ee4baa9644c54dae7eda0f80f07a5, type: 2}
   _SelectedPopupOption: 8
