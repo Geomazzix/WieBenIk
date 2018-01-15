@@ -8,9 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
-  m_Name: Question
+  m_Script: {fileID: 11500000, guid: fc492ce8b56443d4ebd7d8fa719b6391, type: 3}
+  m_Name: WearsClothing
   m_EditorClassIdentifier: 
-  _QuestionText: 
-  _QuestionIsAbout: {fileID: 11400000, guid: 3c1aeb668b7e2c044bafd931ae8d07e7, type: 2}
-  _SelectedPopupOption: 3
+  _PaintingPropertyName: Clothing
