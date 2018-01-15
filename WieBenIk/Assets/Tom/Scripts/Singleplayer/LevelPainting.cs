@@ -11,18 +11,11 @@ namespace WieBenIk.LevelCore
         private Toggle _HighlightToggle;
         private ToggleGroup _SelectedToggleGroup;
         private bool _HighlightRunning;
-        private bool _Active;
-        public bool Active
-        {
-            get { return _Active; }
-            set { _Active = value; }
-        }
 
 
         //Can be awake because it only requires one component.
         private void Awake()
         {
-            _Active = true;
             _HighlightToggle = GetComponent<Toggle>();
             _HighlightToggle.onValueChanged.AddListener((value) => { SetActivePainting(value); });
         }
@@ -31,10 +24,13 @@ namespace WieBenIk.LevelCore
         //Highlight the selectedPainting.
         public void HighlightPainting()
         {
-            _SelectedToggleGroup = _HighlightToggle.group;
-            _HighlightToggle.group = null;
+            if(_ActiveInGame)
+            {
+                _SelectedToggleGroup = _HighlightToggle.group;
+                _HighlightToggle.group = null;
 
-            StartCoroutine(HighlightPaintings(2, 0.25f));
+                StartCoroutine(HighlightPaintings(2, 0.25f));
+            }
         }
 
 
@@ -61,11 +57,17 @@ namespace WieBenIk.LevelCore
         //Check if the highlight is running, if not select the toggle to be active.
         public void SetActivePainting(bool value)
         {
-            if (!_HighlightRunning)
+            if ((!_HighlightRunning) && (_ActiveInGame))
             {
                 FindObjectOfType<GuessOtherPaintingButton>().SetActiveToggle(_HighlightToggle);
             }
         }
-    }
 
+
+        //When a new scene loads in handle the delegates.
+        public void OnDestroy()
+        {
+            _HighlightToggle.onValueChanged.RemoveAllListeners();
+        }
+    }
 }

@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using WieBenIk.Core;
+using TMPro;
 
 namespace WieBenIk.LevelCore
 {
     public class PlayerManager : PlayerEntity
     {
+        [SerializeField]
+        private TextMeshProUGUI _QuestionTextComp; 
+
         [SerializeField]
         private Button _GuessButton;
 
@@ -15,9 +20,17 @@ namespace WieBenIk.LevelCore
         private QuestionAnswerDisplay _AnswerDisplay;
 
 
+        //Set subscribtions.
+        private new void Start()
+        {
+            _LevelManager.ReturnQuestionAnswerEvent += ResetPlayerActions;
+        }
+
+
         //Sends a question to the other playerentity in the level and sets the data for updating the board.
         public override void SendQuestionToPlayerEntity(DatabaseQuestion question)
         {
+            _QuestionTextComp.text = question.QuestionText;
             _LastQuestion = question;
             _QuestionAnswer = FindObjectOfType<AIManager>().AnswerQuestion(question);
             _LevelManager.NotifyQuestionSend(_PlayerID - 1);
@@ -26,7 +39,6 @@ namespace WieBenIk.LevelCore
             _GuessButton.interactable = false;
             _QuestionButton.interactable = false;
 
-            _LevelManager.ReturnQuestionAnswerEvent += ResetPlayerActions;
         }
 
 
@@ -39,7 +51,7 @@ namespace WieBenIk.LevelCore
 
 
         //Guesses the other players painting.
-        public override void GuessTheOtherPlayerPainting(LevelPainting otherPaintingGuess)
+        public override void GuessTheOtherPlayerPainting(Painting otherPaintingGuess)
         {
             if(otherPaintingGuess == FindObjectOfType<AIManager>().PaintingID)
             {
