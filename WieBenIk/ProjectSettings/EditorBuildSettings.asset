@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Tom/Scenes/Splash.unity
+    guid: 2bb08b40babe6f447a52befa3905060e
+  - enabled: 1
+    path: Assets/Tom/Scenes/MainMenu.unity
+    guid: 5a9a954d0ecf7bf49b0a51ee6bb71d2a
+  - enabled: 1
+    path: Assets/Tom/Scenes/CreateSinglePlayerLevel.unity
+    guid: 131ad2cff415ea64ab33061017534fa2
+  - enabled: 1
+    path: Assets/Tom/Scenes/SinglePlayerLevel.unity
+    guid: 112a147e69b20bc4da57d0f182d5ec97
+  - enabled: 1
+    path: Assets/Tom/Scenes/EndSinglePlayerLevelScene.unity
+    guid: 4cc2ecb0f3fc3fe468c1ae4c8da79aa4
