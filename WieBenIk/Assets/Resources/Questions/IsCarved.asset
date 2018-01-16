@@ -11,10 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
   m_Name: IsCarved
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   _QuestionText: Is er in het kunstwerk gegraveerd?
-=======
-  _QuestionText: 
->>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646
   _QuestionIsAbout: {fileID: 11400000, guid: 6aa6b260de2ab0a47acfe4922ae2e56e, type: 2}
   _SelectedPopupOption: 3

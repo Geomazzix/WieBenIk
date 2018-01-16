@@ -11,12 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
   m_Name: IsPainted
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:WieBenIk/Assets/Resources/Questions/IsPainted.asset
-  _QuestionText: Is er op het kunstwerk geschilderd?
-  _QuestionIsAbout: {fileID: 11400000, guid: 3c1aeb668b7e2c044bafd931ae8d07e7, type: 2}
-  _SelectedPopupOption: 7
-=======
   _QuestionText: 
-  _QuestionIsAbout: {fileID: 11400000, guid: 6aa6b260de2ab0a47acfe4922ae2e56e, type: 2}
-  _SelectedPopupOption: 3
->>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646:WieBenIk/Assets/Resources/Questions/Question.asset
+  _QuestionIsAbout: {fileID: 0}
+  _SelectedPopupOption: 0

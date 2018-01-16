@@ -11,10 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
   m_Name: IsBuilding
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   _QuestionText: Functioneerd het kunstwerk als gebouw?
-=======
-  _QuestionText: 
->>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646
   _QuestionIsAbout: {fileID: 11400000, guid: 0c06d15f3b92ae847a5b925b3fbf5650, type: 2}
   _SelectedPopupOption: 2

@@ -14,7 +14,7 @@ MonoBehaviour:
   _PaintingSprite: {fileID: 21300000, guid: ad15474ceea8e4f46ad4e7b7cb273cbd, type: 3}
   _ArtDirection: 0
   _PaintingCharacteristics:
-  - _PaintingProperty: {fileID: 11400000, guid: 0a04b3861b418b548baf74ad0f2a549d,
+  - _PaintingProperty: {fileID: 11400000, guid: e5b055064d69c0442a92e344dd90048e,
       type: 2}
     _DoesContain: 0
   - _PaintingProperty: {fileID: 11400000, guid: 4dbd7bb484e5157418eda54ad3da954a,

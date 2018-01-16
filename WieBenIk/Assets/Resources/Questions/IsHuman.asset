@@ -11,10 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
   m_Name: IsHuman
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   _QuestionText: Wordt er een menselijk figuur op het kunstwerk afgebeeld?
-=======
-  _QuestionText: 
->>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646
   _QuestionIsAbout: {fileID: 11400000, guid: bf4b76e25f3c9a94eb11ef1eec7b3e9f, type: 2}
   _SelectedPopupOption: 6
