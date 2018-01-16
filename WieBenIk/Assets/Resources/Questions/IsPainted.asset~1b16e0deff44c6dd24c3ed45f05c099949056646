@@ -9,12 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
-  m_Name: ContainsGreekSymbolPattern
+  m_Name: IsPainted
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  _QuestionText: Worden er Griekse patronen of symbolen afgebeeld op het kunstwerk?
-=======
   _QuestionText: 
->>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646
-  _QuestionIsAbout: {fileID: 11400000, guid: 0a04b3861b418b548baf74ad0f2a549d, type: 2}
-  _SelectedPopupOption: 0
+  _QuestionIsAbout: {fileID: 11400000, guid: e5b055064d69c0442a92e344dd90048e, type: 2}
+  _SelectedPopupOption: 7

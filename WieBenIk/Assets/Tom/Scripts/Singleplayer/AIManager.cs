@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using WieBenIk.Core;
-using WieBenIk.Data;
+using WieBenIk.UI;
 using System.Collections.Generic;
 
 namespace WieBenIk.LevelCore
@@ -33,7 +33,7 @@ namespace WieBenIk.LevelCore
 
 
         //Guesses the other players painting.
-        public override void GuessTheOtherPlayerPainting(LevelPainting otherPaintingGuess)
+        public override void GuessTheOtherPlayerPainting(Painting otherPaintingGuess)
         {
             if (otherPaintingGuess == FindObjectOfType<PlayerManager>().PaintingID)
             {
@@ -48,12 +48,12 @@ namespace WieBenIk.LevelCore
             base.UpdateGame();  //Updates board.
 
             //Check before sending a new question if the AI can guess.
-            LevelPainting LastPainting = null;
+            Painting LastPainting = null;
             int deactivatedCount = 0;
             int length = _LevelPaintings.Length;
             for (int i = 0; i < length; i++)
             {
-                if(!_LevelPaintings[i].Active)
+                if(!_LevelPaintings[i].ActiveInGame)
                 {
                     deactivatedCount++;
                 }

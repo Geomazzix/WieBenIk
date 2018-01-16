@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
   m_Name: IsClothing
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _QuestionText: Wordt er kleding afgebeeld op het kunstwerk?
+=======
+  _QuestionText: 
+>>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646
   _QuestionIsAbout: {fileID: 11400000, guid: 534922199027f844cad752924c991494, type: 2}
   _SelectedPopupOption: 5

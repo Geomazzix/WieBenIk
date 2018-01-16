@@ -14,7 +14,7 @@ namespace WieBenIk.LevelCore
         protected LevelManager _LevelManager;
 
         [SerializeField]
-        protected LevelPainting[] _LevelPaintings;
+        protected Painting[] _LevelPaintings;
 
         [SerializeField]
         protected Painting _PaintingID;
@@ -122,7 +122,7 @@ namespace WieBenIk.LevelCore
                         {
                             _LevelPaintings[x].gameObject.GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
                             _LevelPaintings[x].GetComponent<Toggle>().isOn = false;
-                            _LevelPaintings[x].Active = false;
+                            _LevelPaintings[x].ActiveInGame = false;
                         }
                     }
                 }
@@ -147,7 +147,7 @@ namespace WieBenIk.LevelCore
 
         //Abstract functions.
         public abstract void SendQuestionToPlayerEntity(DatabaseQuestion question);
-        public abstract void GuessTheOtherPlayerPainting(LevelPainting otherPaintingGuess);
+        public abstract void GuessTheOtherPlayerPainting(Painting otherPaintingGuess);
         protected abstract void AssignPaintingID();
     }
 }

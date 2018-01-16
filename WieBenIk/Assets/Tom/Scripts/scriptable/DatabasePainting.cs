@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 using WieBenIk.Data;
 
 [CreateAssetMenu(fileName = "DatabasePainting",  menuName = "DatabasePainting", order = 2)]
@@ -28,12 +30,44 @@ public class DatabasePainting : ScriptableObject
     //Gets called from editorscript.
     public void UpdateProperties()
     {
-        PaintingProperty[] _PaintingProperties = Resources.LoadAll<PaintingProperty>("Properties");
-        int length = _PaintingProperties.Length;
-        _PaintingCharacteristics = new PaintingCharacteristic[length];
+        //Get all the properties.
+        List<PaintingProperty> paintingProperties = Resources.LoadAll<PaintingProperty>("Properties").ToList();
+        List<PaintingProperty> paintingCharacteristics = new List<PaintingProperty>();
+
+        //get the current characteristics.
+        int length = _PaintingCharacteristics.Length;
         for (int i = 0; i < length; i++)
         {
-           _PaintingCharacteristics[i]._PaintingProperty = _PaintingProperties[i];
+            paintingCharacteristics.Add(_PaintingCharacteristics[i]._PaintingProperty);
+        }
+
+
+        //Check if the list contains the new properties if not add them.
+        int count = paintingProperties.Count;
+        for (int i = 0; i < count; i++)
+        {
+            if(!paintingCharacteristics.Contains<PaintingProperty>(paintingProperties[i]))
+            {
+                paintingCharacteristics.Add(paintingProperties[i]);
+            }
+        }
+
+
+        //Check if the list contians any unnecessary properties, if so remove them.
+        int count2 = paintingCharacteristics.Count;
+        for (int i = 0; i < count2; i++)
+        {
+            if(!paintingProperties.Contains<PaintingProperty>(paintingCharacteristics[i]))
+            {
+                paintingCharacteristics.Remove(paintingCharacteristics[i]);
+            }
+        }
+
+
+        //Reassign the new array.
+        for (int i = 0; i < length; i++)
+        {
+            _PaintingCharacteristics[0]._PaintingProperty = paintingCharacteristics[i];
         }
     }
 }

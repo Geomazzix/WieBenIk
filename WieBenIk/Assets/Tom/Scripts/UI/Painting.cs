@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using WieBenIk.Utility;
 
 namespace WieBenIk.Core
 {
@@ -14,7 +14,23 @@ namespace WieBenIk.Core
             get { return ImageComp; }
         }
 
-        [SerializeField]
+
+        protected bool _ActiveInGame;
+        public bool ActiveInGame
+        {
+            get { return _ActiveInGame; }
+            set { _ActiveInGame = value; DisablePainting(); }
+        }
+
+
+        [HideInInspector]
         public PaintingCharacteristic[] _Characteristics;
+
+
+        //Disable the painting, not the gameobject.
+        public void DisablePainting()
+        {
+            GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
+        }
     }
 }

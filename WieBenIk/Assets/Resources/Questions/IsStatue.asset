@@ -11,6 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
   m_Name: IsStatue
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _QuestionText: Is het kunstwerk een standbeeld?
   _QuestionIsAbout: {fileID: 11400000, guid: a6093542d43228e46835af758d22fd17, type: 2}
+=======
+  _QuestionText: 
+  _QuestionIsAbout: {fileID: 11400000, guid: 0a3ee4baa9644c54dae7eda0f80f07a5, type: 2}
+>>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646
   _SelectedPopupOption: 8

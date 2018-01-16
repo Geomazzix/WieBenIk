@@ -11,6 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27066d098ca1451418b4ebcf92710420, type: 3}
   m_Name: IsBronze
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   _QuestionText: Is het kunstwerk gemaakt van het materiaal brons?
+=======
+  _QuestionText: 
+>>>>>>> 1b16e0deff44c6dd24c3ed45f05c099949056646
   _QuestionIsAbout: {fileID: 11400000, guid: 4dbd7bb484e5157418eda54ad3da954a, type: 2}
   _SelectedPopupOption: 1
