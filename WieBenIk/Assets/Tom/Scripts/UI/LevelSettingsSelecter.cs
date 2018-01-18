@@ -23,13 +23,6 @@ namespace WieBenIk.Core
         [SerializeField]
         private string _QuestionsDatapath;
 
-
-        [SerializeField]
-        private DatabasePaintings _PaintingsDatabase;
-
-        [SerializeField]
-        private DatabaseQuestions _QuestionsDatabase;
-
         [SerializeField]
         private Toggle[] _ArtDirections;
 

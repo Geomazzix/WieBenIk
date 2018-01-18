@@ -49,10 +49,10 @@ public class DatabasePaintingInspector : Editor
         _Paintings = Resources.LoadAll<DatabasePainting>("Paintings");
         int paintingsLength = _Paintings.Length;
 
-
         //When the button is pressed, update ALL questions.
         if (GUILayout.Button("Update paintings."))
         {
+            //Set the array length.
             for (int i = 0; i < paintingsLength; i++)
             {
                 _Paintings[i].UpdateProperties();

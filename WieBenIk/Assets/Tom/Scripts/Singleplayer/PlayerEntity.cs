@@ -69,7 +69,7 @@ namespace WieBenIk.LevelCore
         private void AssignPaintingSprites()
         {
             int length = _LevelPaintings.Length;
-            int propertiesLength = _ImportedPaintings[0]._PaintingCharacteristics.Length;
+            int propertiesLength = _ImportedPaintings[0]._PaintingCharacteristics.Count;
             for (int x = 0; x < length; x++)
             {
                 _LevelPaintings[x].ImageComp.sprite = _ImportedPaintings[x].PaintingSprite;

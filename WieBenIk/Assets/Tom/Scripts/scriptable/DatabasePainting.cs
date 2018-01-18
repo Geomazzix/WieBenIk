@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 using WieBenIk.Data;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "DatabasePainting",  menuName = "DatabasePainting", order = 2)]
 public class DatabasePainting : ScriptableObject
@@ -24,55 +24,88 @@ public class DatabasePainting : ScriptableObject
 
 
     [SerializeField]
-    public PaintingCharacteristic[] _PaintingCharacteristics;
+    public List<PaintingCharacteristic> _PaintingCharacteristics = new List<PaintingCharacteristic>();
 
 
     //Gets called from editorscript.
     public void UpdateProperties()
     {
-        //Get all the properties.
-        List<PaintingProperty> paintingProperties = Resources.LoadAll<PaintingProperty>("Properties").ToList();
-        List<PaintingProperty> paintingCharacteristics = new List<PaintingProperty>();
+        //Load the all the properties in
+        PaintingProperty[] paintingProperties = Resources.LoadAll<PaintingProperty>("Properties");
+        int paintingPropertiesCount = paintingProperties.Length;
 
-        //get the current characteristics.
-        int length = _PaintingCharacteristics.Length;
-        for (int i = 0; i < length; i++)
+        //Load the current properties in.
+        List<PaintingProperty> currentPaintingProperties = new List<PaintingProperty>();
+        int paintingCharacteristicsCount = _PaintingCharacteristics.Count;
+        if (paintingCharacteristicsCount > 0)
         {
-            paintingCharacteristics.Add(_PaintingCharacteristics[i]._PaintingProperty);
+            for (int i = 0; i < paintingCharacteristicsCount; i++)
+            {
+                currentPaintingProperties.Add(_PaintingCharacteristics[i]._PaintingProperty);
+            }
+        }
+        else
+        {
+            _PaintingCharacteristics = new List<PaintingCharacteristic>(paintingPropertiesCount);
         }
 
 
-        //Check if the list contains the new properties if not add them.
-        int count = paintingProperties.Count;
-        for (int i = 0; i < count; i++)
+        //Add properties to the characteristics array.
+        if (paintingCharacteristicsCount < paintingPropertiesCount)
         {
-            if(!paintingCharacteristics.Contains<PaintingProperty>(paintingProperties[i]))
+            //Loop through the paintingproperties to check seek for the missing property.
+            for (int i = 0; i < paintingPropertiesCount; i++)
             {
-                paintingCharacteristics.Add(paintingProperties[i]);
+                if(!currentPaintingProperties.Contains<PaintingProperty>(paintingProperties[i]))
+                {
+                    currentPaintingProperties.Add(paintingProperties[i]);
+                }
+            }
+        }
+
+        
+        //Remove properties from the characteristics array.
+        if (paintingCharacteristicsCount > paintingPropertiesCount)
+        {
+            //Loop through the paintingcharacteristicsarray to look for properties that are not supposed to be there.
+            for (int i = 0; i < paintingCharacteristicsCount; i++)
+            {
+                if(!paintingProperties.Contains(currentPaintingProperties[i]))
+                {
+                    currentPaintingProperties.Remove(currentPaintingProperties[i]);
+                }
+
+                if (_PaintingCharacteristics[i]._PaintingProperty == null)
+                {
+                    _PaintingCharacteristics.Remove(_PaintingCharacteristics[i]);
+                }
             }
         }
 
 
-        //Check if the list contians any unnecessary properties, if so remove them.
-        int count2 = paintingCharacteristics.Count;
-        for (int i = 0; i < count2; i++)
+        //Reassign the array to the inspector.
+        for (int i = 0; i < paintingPropertiesCount; i++)
         {
-            if(!paintingProperties.Contains<PaintingProperty>(paintingCharacteristics[i]))
+            //When the lenght doesnt match the listcount make sure to expand it.
+            if(i >= _PaintingCharacteristics.Count)
             {
-                paintingCharacteristics.Remove(paintingCharacteristics[i]);
+                PaintingCharacteristic newPaintingCharacteristic = new PaintingCharacteristic();
+                newPaintingCharacteristic._PaintingProperty = currentPaintingProperties[i];
+                _PaintingCharacteristics.Add(newPaintingCharacteristic);
+                
             }
-        }
-
-
-        //Reassign the new array.
-        for (int i = 0; i < length; i++)
-        {
-            _PaintingCharacteristics[0]._PaintingProperty = paintingCharacteristics[i];
+            else
+            {
+                PaintingCharacteristic currCharacteristic = _PaintingCharacteristics[i];
+                currCharacteristic._PaintingProperty = currentPaintingProperties[i];
+                _PaintingCharacteristics[i] = currCharacteristic;
+            }
         }
     }
 }
 
 
+//One of the multiple paintingcharacteristics of the painting.
 [System.Serializable]
 public struct PaintingCharacteristic
 {
