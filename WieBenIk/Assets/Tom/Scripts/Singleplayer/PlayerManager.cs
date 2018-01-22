@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using WieBenIk.Core;
 using TMPro;
+using System.Linq;
 
 namespace WieBenIk.LevelCore
 {
@@ -23,7 +24,13 @@ namespace WieBenIk.LevelCore
         //Set subscribtions.
         private new void Start()
         {
+            base.Start();
+
+            Invoke("AssignPaintingID", 0.1f);
+
+
             _LevelManager.ReturnQuestionAnswerEvent += ResetPlayerActions;
+            _LevelManager.ReturnQuestionAnswerEvent += UpdateGame;
         }
 
 
@@ -38,7 +45,6 @@ namespace WieBenIk.LevelCore
             //Make sure that when the player has taken an action he can't do anymore actions.
             _GuessButton.interactable = false;
             _QuestionButton.interactable = false;
-
         }
 
 
@@ -67,7 +73,10 @@ namespace WieBenIk.LevelCore
         //Sets the player identity.
         protected override void AssignPaintingID()
         {
-            
+            AIManager AIManager = FindObjectOfType<AIManager>();
+            int index = Random.Range(0, AIManager._ImportedPaintings.Length);
+            _PaintingID.Sprite = AIManager._ImportedPaintings[index].PaintingSprite;
+            _PaintingID._Characteristics = AIManager._ImportedPaintings[index]._PaintingCharacteristics.ToArray();
         }
 
 
@@ -81,8 +90,9 @@ namespace WieBenIk.LevelCore
 
 
         //Make sure to unsubscribe the subscribtions.
-        public new void OnDestroy()
+        public void OnDestroy()
         {
+            _LevelManager.ReturnQuestionAnswerEvent -= UpdateGame;
             _LevelManager.ReturnQuestionAnswerEvent -= ResetPlayerActions;
         }
     }
