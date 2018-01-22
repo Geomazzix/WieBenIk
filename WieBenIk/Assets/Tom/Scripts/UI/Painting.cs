@@ -5,15 +5,15 @@ using WieBenIk.Utility;
 namespace WieBenIk.Core
 {
     //Represents the core of a painting.
+    [RequireComponent(typeof(Image))]
     public class Painting : MonoBehaviour
     {
-        [SerializeField]
-        private Image _ImageComp;
-        public Image ImageComp
+        private Sprite _Sprite;
+        public Sprite Sprite
         {
-            get { return ImageComp; }
+            get { return _Sprite; }
+            set { _Sprite = value; GetComponent<Image>().sprite = value;}
         }
-
 
         protected bool _ActiveInGame;
         public bool ActiveInGame

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using WieBenIk.Data;
+using System.Collections.Generic;
 using WieBenIk.LevelCore;
 using WieBenIk.Core;
 
@@ -23,23 +23,20 @@ namespace WieBenIk.UI
             set { _SelectedQuestion = value; }
         }
 
+        private List<QuestionContent> _QuestionButtons;
+
 
         //Load all questions in.
         public void Start()
         {
+            _QuestionButtons = new List<QuestionContent>();
             LevelSettings levelSettings = FindObjectOfType<LevelSettings>();
             int length = levelSettings._Questions.Length;
-            if(length != 0)
+            for (int i = 0; i < length; i++)
             {
-                for (int i = 0; i < length; i++)
-                {
-                    Instantiate(_QuestionPrefab, _QuestionPrefabParent);
-                    _QuestionPrefab.Question = levelSettings._Questions[i];
-                }
-            }
-            else
-            {
-                Debug.LogWarning("No questions in Levelsettings!");
+                QuestionContent currQuestion = Instantiate(_QuestionPrefab, _QuestionPrefabParent);
+                currQuestion.Question = levelSettings._Questions[i];
+                _QuestionButtons.Add(currQuestion);
             }
         }
 

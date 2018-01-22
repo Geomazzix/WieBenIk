@@ -23,7 +23,8 @@ namespace WieBenIk.LevelCore
             get { return _PaintingID; }
         }
 
-        protected DatabasePainting[] _ImportedPaintings;
+        [HideInInspector]
+        public DatabasePainting[] _ImportedPaintings;
         protected LevelSettings _LevelSettings;
         protected bool _QuestionAnswer;
         protected DatabaseQuestion _LastQuestion;
@@ -41,27 +42,7 @@ namespace WieBenIk.LevelCore
                 _ImportedPaintings[i] = _LevelSettings._Paintings[_PlayerID - 1][i];
             }
 
-
-            //Check if the images did load in.
-            if (_ImportedPaintings.Length > 0)
-            {
-                AssignPaintingSprites();
-                AssignPaintingID();
-            }
-            else
-            {
-                Debug.LogWarning("No paintings were loaded in, in: " + name + "!");
-            }
-
-            //Check if the questions did load in.
-            if(_LevelSettings._Questions.Length <= 0)
-            {
-                Debug.LogWarning("No questions were loaded in, in: " + name + "!");
-            }
-
-
-            //Handle the subscribtion.
-            _LevelManager.ReturnQuestionAnswerEvent += UpdateGame;
+            AssignPaintingSprites();
         }
 
 
@@ -70,10 +51,11 @@ namespace WieBenIk.LevelCore
         {
             int length = _LevelPaintings.Length;
             int propertiesLength = _ImportedPaintings[0]._PaintingCharacteristics.Count;
+            
             for (int x = 0; x < length; x++)
             {
-                _LevelPaintings[x].ImageComp.sprite = _ImportedPaintings[x].PaintingSprite;
-
+                _LevelPaintings[x].Sprite = _ImportedPaintings[x].PaintingSprite;
+                
                 //Set the painting properties.
                 for (int y = 0; y < propertiesLength; y++)
                 {
@@ -107,29 +89,6 @@ namespace WieBenIk.LevelCore
         }
 
 
-        //Change the paintings if the property is none of them.
-        private void ChangePaintingsBoard(PaintingProperty paintingProperty, bool answerOfQuestion)
-        {
-            int length = _LevelPaintings.Length;
-            int propertiesLength = _LevelPaintings[0]._Characteristics.Length;
-            for (int x = 0; x < length; x++)
-            {
-                for (int y = 0; y < propertiesLength; y++)
-                {
-                    if (_LevelPaintings[x]._Characteristics[y]._PaintingProperty == paintingProperty)
-                    {
-                        if (!_LevelPaintings[x]._Characteristics[y]._DoesContain)
-                        {
-                            _LevelPaintings[x].gameObject.GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
-                            _LevelPaintings[x].GetComponent<Toggle>().isOn = false;
-                            _LevelPaintings[x].ActiveInGame = false;
-                        }
-                    }
-                }
-            }
-        }
-
-
         //Gets called when all the question have been received by the levelmanager.
         public virtual void UpdateGame()
         {
@@ -138,10 +97,28 @@ namespace WieBenIk.LevelCore
         }
 
 
-        //Handle subscribtions.
-        public void OnDestroy()
+        //Change the paintings if the property is none of them.
+        private void ChangePaintingsBoard(PaintingProperty paintingProperty, bool answerOfQuestion)
         {
-            _LevelManager.ReturnQuestionAnswerEvent -= UpdateGame;
+            int length = _LevelPaintings.Length;
+            int propertiesLength = _ImportedPaintings[0]._PaintingCharacteristics.Count;
+
+            for (int x = 0; x < length; x++)
+            {
+                for (int y = 0; y < propertiesLength; y++)
+                {
+                    if (_LevelPaintings[x]._Characteristics[y]._PaintingProperty == paintingProperty)
+                    {
+                        if (!_LevelPaintings[x]._Characteristics[y]._DoesContain)
+                        {
+                            print("Updatedpiece: " + _LevelPaintings[x]);
+                            _LevelPaintings[x].gameObject.GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
+                            _LevelPaintings[x].GetComponent<Toggle>().isOn = false;
+                            _LevelPaintings[x].ActiveInGame = false;
+                        }
+                    }
+                }
+            }
         }
 
 

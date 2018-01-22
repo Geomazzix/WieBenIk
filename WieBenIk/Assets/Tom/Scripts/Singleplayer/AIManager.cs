@@ -14,13 +14,16 @@ namespace WieBenIk.LevelCore
         {
             base.Start();
 
-            _LevelSettings = FindObjectOfType<LevelSettings>();
             _Questions = new List<DatabaseQuestion>(_LevelSettings._Questions);
 
             //Sends the first question.
             int chosesQuestionIndex = Random.Range(0, _Questions.Count - 1);
             SendQuestionToPlayerEntity(_Questions[chosesQuestionIndex]);
             _Questions.RemoveAt(chosesQuestionIndex);
+
+            Invoke("AssignPaintingID", 0.1f);
+
+            _LevelManager.ReturnQuestionAnswerEvent += UpdateGame;
         }
 
 
@@ -29,6 +32,7 @@ namespace WieBenIk.LevelCore
         {
             _QuestionAnswer = FindObjectOfType<PlayerManager>().AnswerQuestion(question);
             FindObjectOfType<LevelManager>().NotifyQuestionSend(_PlayerID - 1);
+            _LastQuestion = question;
         }
 
 
@@ -80,7 +84,17 @@ namespace WieBenIk.LevelCore
         //Sets the player identity.
         protected override void AssignPaintingID()
         {
+            PlayerManager PlayerManager = FindObjectOfType<PlayerManager>();
+            int index = Random.Range(0, PlayerManager._ImportedPaintings.Length);
+            _PaintingID.Sprite = PlayerManager._ImportedPaintings[index].PaintingSprite;
+            _PaintingID._Characteristics = PlayerManager._ImportedPaintings[index]._PaintingCharacteristics.ToArray();
+        }
 
+
+        //When this instance gets destroyed handle the subscribtions.
+        public void OnDestroy()
+        {
+            _LevelManager.ReturnQuestionAnswerEvent -= UpdateGame;
         }
     }
 }
