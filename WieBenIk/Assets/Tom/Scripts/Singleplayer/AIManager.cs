@@ -65,9 +65,12 @@ namespace WieBenIk.LevelCore
                 LastPainting = _LevelPaintings[i];//This is not efficient, but once there is only one remaining this will find it.
             }
 
-
             //Look if there is only 1 card remaining on the board, if so guess the other painting (which will have a 100% guess chance), else keep guessing.
-            if(deactivatedCount >= _LevelSettings.LevelPaintingCount - 1)
+            if(deactivatedCount == _LevelSettings.LevelPaintingCount)
+            {
+                Debug.LogError("None paintingproperties have been set in the database folder!");
+            }
+            else if (deactivatedCount >= _LevelSettings.LevelPaintingCount - 1)
             {
                 GuessTheOtherPlayerPainting(LastPainting);
             }

@@ -51,11 +51,13 @@ namespace WieBenIk.LevelCore
         {
             int length = _LevelPaintings.Length;
             int propertiesLength = _ImportedPaintings[0]._PaintingCharacteristics.Count;
-            
+
             for (int x = 0; x < length; x++)
             {
                 _LevelPaintings[x].Sprite = _ImportedPaintings[x].PaintingSprite;
-                
+                _LevelPaintings[x]._Characteristics = _ImportedPaintings[x]._PaintingCharacteristics.ToArray();
+                _LevelPaintings[x].ActiveInGame = true;
+
                 //Set the painting properties.
                 for (int y = 0; y < propertiesLength; y++)
                 {
@@ -111,7 +113,6 @@ namespace WieBenIk.LevelCore
                     {
                         if (!_LevelPaintings[x]._Characteristics[y]._DoesContain)
                         {
-                            print("Updatedpiece: " + _LevelPaintings[x]);
                             _LevelPaintings[x].gameObject.GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
                             _LevelPaintings[x].GetComponent<Toggle>().isOn = false;
                             _LevelPaintings[x].ActiveInGame = false;

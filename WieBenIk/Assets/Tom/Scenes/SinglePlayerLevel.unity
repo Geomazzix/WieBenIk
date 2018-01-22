@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 107472614}
 --- !u!225 &107472614
 CanvasGroup:
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 137429957}
 --- !u!225 &137429957
 CanvasGroup:
@@ -1733,7 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 159000444}
 --- !u!225 &159000444
 CanvasGroup:
@@ -2596,11 +2596,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -2806,7 +2806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.10098749}
+  m_AnchoredPosition: {x: 0, y: 0.10101318}
   m_SizeDelta: {x: 1500, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362512476
@@ -3908,7 +3908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 577362932}
 --- !u!225 &577362932
 CanvasGroup:
@@ -4559,7 +4559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 775565848}
 --- !u!225 &775565848
 CanvasGroup:
@@ -4801,7 +4801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 781352175}
 --- !u!225 &781352175
 CanvasGroup:
@@ -5409,7 +5409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 914763730}
 --- !u!225 &914763730
 CanvasGroup:
@@ -5790,7 +5790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 1054731528}
 --- !u!225 &1054731528
 CanvasGroup:
@@ -7584,7 +7584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 1434445601}
 --- !u!225 &1434445601
 CanvasGroup:
@@ -7866,7 +7866,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 50, y: 5, z: 50, w: 5}
   m_textInfo:
     textComponent: {fileID: 1451043528}
     characterCount: 13
@@ -8932,7 +8932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 1623618314}
 --- !u!225 &1623618314
 CanvasGroup:
@@ -9770,7 +9770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 1787673752}
 --- !u!225 &1787673752
 CanvasGroup:
@@ -10506,7 +10506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20bf13b595170c74c813028fbd5cfb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FadeSpeed: 0
+  _FadeSpeed: 1
   _FadeScreen: {fileID: 1989512056}
 --- !u!225 &1989512056
 CanvasGroup:

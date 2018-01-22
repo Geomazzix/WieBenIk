@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using WieBenIk.Core;
 using TMPro;
-using System.Linq;
 
 namespace WieBenIk.LevelCore
 {
@@ -37,14 +36,14 @@ namespace WieBenIk.LevelCore
         //Sends a question to the other playerentity in the level and sets the data for updating the board.
         public override void SendQuestionToPlayerEntity(DatabaseQuestion question)
         {
+            //Make sure that when the player has taken an action he can't do anymore actions.
+            _GuessButton.interactable = false;
+            _QuestionButton.interactable = false;
+
             _QuestionTextComp.text = question.QuestionText;
             _LastQuestion = question;
             _QuestionAnswer = FindObjectOfType<AIManager>().AnswerQuestion(question);
             _LevelManager.NotifyQuestionSend(_PlayerID - 1);
-
-            //Make sure that when the player has taken an action he can't do anymore actions.
-            _GuessButton.interactable = false;
-            _QuestionButton.interactable = false;
         }
 
 

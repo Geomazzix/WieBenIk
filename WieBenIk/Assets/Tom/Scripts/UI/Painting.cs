@@ -19,11 +19,10 @@ namespace WieBenIk.Core
         public bool ActiveInGame
         {
             get { return _ActiveInGame; }
-            set { _ActiveInGame = value; DisablePainting(); }
+            set { _ActiveInGame = value; if(!value)DisablePainting(); }
         }
 
 
-        [HideInInspector]
         public PaintingCharacteristic[] _Characteristics;
 
 
