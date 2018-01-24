@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using WieBenIk.Core;
-using WieBenIk.UI;
 using System.Collections.Generic;
 
 namespace WieBenIk.LevelCore
@@ -15,13 +14,8 @@ namespace WieBenIk.LevelCore
             base.Start();
 
             _Questions = new List<DatabaseQuestion>(_LevelSettings._Questions);
-
-            //Sends the first question.
-            int chosesQuestionIndex = Random.Range(0, _Questions.Count - 1);
-            SendQuestionToPlayerEntity(_Questions[chosesQuestionIndex]);
-            _Questions.RemoveAt(chosesQuestionIndex);
-
             Invoke("AssignPaintingID", 0.1f);
+            
 
             _LevelManager.ReturnQuestionAnswerEvent += UpdateGame;
         }
@@ -39,8 +33,13 @@ namespace WieBenIk.LevelCore
         //Guesses the other players painting.
         public override void GuessTheOtherPlayerPainting(Painting otherPaintingGuess)
         {
-            if (otherPaintingGuess == FindObjectOfType<PlayerManager>().PaintingID)
+            print("Check other painting!!");
+            print("Other paintingsprite: " + otherPaintingGuess.Sprite.name);
+            print("Paintingsprite: " + FindObjectOfType<PlayerManager>().PaintingID.Sprite);
+
+            if (otherPaintingGuess.Sprite == FindObjectOfType<PlayerManager>().PaintingID.Sprite)
             {
+                print("Endgame");
                 _LevelManager.EndGame(this);
             }
         }
@@ -61,8 +60,10 @@ namespace WieBenIk.LevelCore
                 {
                     deactivatedCount++;
                 }
-
-                LastPainting = _LevelPaintings[i];//This is not efficient, but once there is only one remaining this will find it.
+                else
+                {
+                    LastPainting = _LevelPaintings[i];//This is not efficient, but once there is only one remaining this will find it.
+                }
             }
 
             //Look if there is only 1 card remaining on the board, if so guess the other painting (which will have a 100% guess chance), else keep guessing.
@@ -77,7 +78,9 @@ namespace WieBenIk.LevelCore
             else
             {
                 //Sends new question instantly.
-                int chosesQuestionIndex = Random.Range(0, _Questions.Count - 1);
+                int chosesQuestionIndex = Random.Range(0, _Questions.Count);
+                //print("ChosenquestionIndex: " + chosesQuestionIndex);
+                //print("QuestionsCount: " + _Questions.Count);
                 SendQuestionToPlayerEntity(_Questions[chosesQuestionIndex]);
                 _Questions.RemoveAt(chosesQuestionIndex);
             }
@@ -91,6 +94,11 @@ namespace WieBenIk.LevelCore
             int index = Random.Range(0, PlayerManager._ImportedPaintings.Length);
             _PaintingID.Sprite = PlayerManager._ImportedPaintings[index].PaintingSprite;
             _PaintingID._Characteristics = PlayerManager._ImportedPaintings[index]._PaintingCharacteristics.ToArray();
+
+            //Sends the first question.
+            int chosesQuestionIndex = Random.Range(0, _Questions.Count - 1);
+            SendQuestionToPlayerEntity(_Questions[chosesQuestionIndex]);
+            _Questions.RemoveAt(chosesQuestionIndex);
         }
 
 
