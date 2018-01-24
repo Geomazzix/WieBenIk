@@ -12,35 +12,35 @@ MonoBehaviour:
   m_Name: Roman_Artwork_6
   m_EditorClassIdentifier: 
   _PaintingSprite: {fileID: 21300000, guid: ad15474ceea8e4f46ad4e7b7cb273cbd, type: 3}
-  _ArtDirection: 0
+  _ArtDirection: 1
   _PaintingCharacteristics:
   - _PaintingProperty: {fileID: 11400000, guid: 0a04b3861b418b548baf74ad0f2a549d,
       type: 2}
     _DoesContain: 0
   - _PaintingProperty: {fileID: 11400000, guid: 4dbd7bb484e5157418eda54ad3da954a,
       type: 2}
-    _DoesContain: 0
+    _DoesContain: 1
   - _PaintingProperty: {fileID: 11400000, guid: 0c06d15f3b92ae847a5b925b3fbf5650,
       type: 2}
     _DoesContain: 0
   - _PaintingProperty: {fileID: 11400000, guid: 6aa6b260de2ab0a47acfe4922ae2e56e,
       type: 2}
-    _DoesContain: 0
+    _DoesContain: 1
   - _PaintingProperty: {fileID: 11400000, guid: 5129452fd529aae4597d12083e1311b1,
       type: 2}
     _DoesContain: 0
   - _PaintingProperty: {fileID: 11400000, guid: 534922199027f844cad752924c991494,
       type: 2}
-    _DoesContain: 0
+    _DoesContain: 1
   - _PaintingProperty: {fileID: 11400000, guid: bf4b76e25f3c9a94eb11ef1eec7b3e9f,
       type: 2}
-    _DoesContain: 0
+    _DoesContain: 1
   - _PaintingProperty: {fileID: 11400000, guid: 3c1aeb668b7e2c044bafd931ae8d07e7,
       type: 2}
     _DoesContain: 0
   - _PaintingProperty: {fileID: 11400000, guid: a6093542d43228e46835af758d22fd17,
       type: 2}
-    _DoesContain: 0
+    _DoesContain: 1
   - _PaintingProperty: {fileID: 11400000, guid: e5b055064d69c0442a92e344dd90048e,
       type: 2}
     _DoesContain: 0
