@@ -2,7 +2,7 @@
 
 namespace WieBenIk.Core
 {
-    public class GameManager : MonoBehaviour
+    public sealed class GameManager : MonoBehaviour
     {
         [SerializeField]
         private string _FirstSceneName;

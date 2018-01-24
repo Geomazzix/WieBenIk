@@ -3,7 +3,7 @@ using WieBenIk.Data;
 
 namespace WieBenIk.UI
 {
-    public class ArtDirectionToggleButton : MonoBehaviour
+    public sealed class ArtDirectionToggleButton : MonoBehaviour
     {
         [SerializeField]
         private EArtDirections _ArtDirection;

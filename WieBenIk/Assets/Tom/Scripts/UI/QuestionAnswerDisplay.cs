@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class QuestionAnswerDisplay : MonoBehaviour 
+public sealed class QuestionAnswerDisplay : MonoBehaviour 
 {
     [SerializeField]
     private string _TrueText, _FalseText;

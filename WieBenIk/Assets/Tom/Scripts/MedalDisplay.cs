@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MedalDisplay : MonoBehaviour 
+public sealed class MedalDisplay : MonoBehaviour 
 {
 	 
 }

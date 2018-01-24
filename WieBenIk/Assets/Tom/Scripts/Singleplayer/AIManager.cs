@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace WieBenIk.LevelCore
 {
-    public class AIManager : PlayerEntity
+    public sealed class AIManager : PlayerEntity
     {
         private List<DatabaseQuestion> _Questions;
 

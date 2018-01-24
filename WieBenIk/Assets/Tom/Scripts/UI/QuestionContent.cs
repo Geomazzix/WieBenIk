@@ -4,7 +4,7 @@ using TMPro;
 
 namespace WieBenIk.UI
 {
-    public class QuestionContent : MonoBehaviour
+    public sealed class QuestionContent : MonoBehaviour
     {
         private QuestionDisplayController _QuestionDisplayController;
         private Toggle _ToggleComp;

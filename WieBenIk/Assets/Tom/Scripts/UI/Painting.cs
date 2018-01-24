@@ -6,7 +6,7 @@ namespace WieBenIk.Core
 {
     //Represents the core of a painting.
     [RequireComponent(typeof(Image))]
-    public class Painting : MonoBehaviour, IPainting
+    public class Painting : MonoBehaviour
     {
         private Sprite _Sprite;
         public Sprite Sprite
@@ -31,13 +31,6 @@ namespace WieBenIk.Core
         {
             GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
             GetComponent<Toggle>().interactable = false;
-        }
-
-
-        //Select the current painting.
-        public void SetSelectedPainting(bool value)
-        {
-
         }
     }
 }

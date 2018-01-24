@@ -4,7 +4,7 @@ using WieBenIk.LevelCore;
 
 namespace WieBenIk.Core
 {
-    public class LevelSettings : MonoBehaviour
+    public sealed class LevelSettings : MonoBehaviour
     {
         [SerializeField]
         private int _LevelPaintingCount;

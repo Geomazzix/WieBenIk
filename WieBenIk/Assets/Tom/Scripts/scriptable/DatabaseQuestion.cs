@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "DatabaseQuestion", menuName = "DatabaseQuestion", order = 1)]
-public class DatabaseQuestion : ScriptableObject 
+public sealed class DatabaseQuestion : ScriptableObject 
 {
     [SerializeField]
     private string _QuestionText;

@@ -5,7 +5,7 @@ using WieBenIk.Core;
 
 namespace WieBenIk.UI
 {
-    public class QuestionDisplayController : MonoBehaviour
+    public sealed class QuestionDisplayController : MonoBehaviour
     {
         [SerializeField]
         private QuestionContent _QuestionPrefab;

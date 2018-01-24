@@ -4,7 +4,7 @@ using WieBenIk.LevelCore;
 
 namespace WieBenIk.UI
 {
-    public class GuessOtherPaintingButton : MonoBehaviour
+    public sealed  class GuessOtherPaintingButton : MonoBehaviour
     {
         [SerializeField]
         private PlayerManager _PlayerManager;

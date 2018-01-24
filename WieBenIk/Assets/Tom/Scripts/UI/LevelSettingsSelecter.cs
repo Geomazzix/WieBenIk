@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace WieBenIk.Core
 {
-    public class LevelSettingsSelecter : MonoBehaviour
+    public sealed class LevelSettingsSelecter : MonoBehaviour
     {
         [Tooltip("Keep this on 2 for singleplayer for now.")]
         [SerializeField]

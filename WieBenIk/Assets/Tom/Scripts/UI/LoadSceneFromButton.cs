@@ -4,7 +4,7 @@ using WieBenIk.Core;
 
 namespace WieBenIk.UI
 {
-    public class LoadSceneFromButton : MonoBehaviour
+    public sealed class LoadSceneFromButton : MonoBehaviour
     {
         [SerializeField]
         private string _SceneName;
