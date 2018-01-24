@@ -6156,8 +6156,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7056f17b0072874499634a6f9888e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TrueText: Yes
-  _FalseText: No
+  _TrueText: Ja
+  _FalseText: Nee
   _TrueColor: {r: 0.43921575, g: 0.9490196, b: 0.5693036, a: 1}
   _FalseColor: {r: 0.9485294, g: 0.43939233, b: 0.43939233, a: 1}
   _AnswerText: {fileID: 332487430}
