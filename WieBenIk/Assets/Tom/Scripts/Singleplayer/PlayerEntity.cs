@@ -109,13 +109,19 @@ namespace WieBenIk.LevelCore
             {
                 for (int y = 0; y < propertiesLength; y++)
                 {
+                    //Look for the painting property in all of the paintings.
                     if (_LevelPaintings[x]._Characteristics[y]._PaintingProperty == paintingProperty)
                     {
-                        if (!_LevelPaintings[x]._Characteristics[y]._DoesContain)
+                        //When found check if the answer equals the paintings setting, if not, deactivate the painting.
+                        if ((answerOfQuestion != _LevelPaintings[x]._Characteristics[y]._DoesContain))
                         {
-                            _LevelPaintings[x].gameObject.GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
-                            _LevelPaintings[x].GetComponent<Toggle>().isOn = false;
-                            _LevelPaintings[x].ActiveInGame = false;
+                            //Check if the painting is not disabled yet.
+                            if (_LevelPaintings[x].ActiveInGame)
+                            {
+                                _LevelPaintings[x].gameObject.GetComponentInParent<FadeScreen>().StartFadeToInvisible(1.0f, 0.3f);
+                                _LevelPaintings[x].GetComponent<Toggle>().isOn = false;
+                                _LevelPaintings[x].ActiveInGame = false;
+                            }
                         }
                     }
                 }
