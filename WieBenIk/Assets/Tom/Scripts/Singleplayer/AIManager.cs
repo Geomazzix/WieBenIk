@@ -78,11 +78,12 @@ namespace WieBenIk.LevelCore
             else
             {
                 //Sends new question instantly.
-                int chosesQuestionIndex = Random.Range(0, _Questions.Count);
-                //print("ChosenquestionIndex: " + chosesQuestionIndex);
-                //print("QuestionsCount: " + _Questions.Count);
-                SendQuestionToPlayerEntity(_Questions[chosesQuestionIndex]);
-                _Questions.RemoveAt(chosesQuestionIndex);
+                int chosenQuestionIndex = Random.Range(0, _Questions.Count);
+                if(chosenQuestionIndex <= _Questions.Count) //Put check in here, because it kept giving null references.
+                {
+                    SendQuestionToPlayerEntity(_Questions[chosenQuestionIndex]);
+                    _Questions.RemoveAt(chosenQuestionIndex);
+                }
             }
         }
 
