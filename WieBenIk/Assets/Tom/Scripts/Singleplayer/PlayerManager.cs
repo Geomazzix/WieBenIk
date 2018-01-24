@@ -58,7 +58,7 @@ namespace WieBenIk.LevelCore
         //Guesses the other players painting.
         public override void GuessTheOtherPlayerPainting(Painting otherPaintingGuess)
         {
-            if(otherPaintingGuess == FindObjectOfType<AIManager>().PaintingID)
+            if(otherPaintingGuess.Sprite == FindObjectOfType<AIManager>().PaintingID.Sprite)
             {
                 _LevelManager.EndGame(this);
             }
