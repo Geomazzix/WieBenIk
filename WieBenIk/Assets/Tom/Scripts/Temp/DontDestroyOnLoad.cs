@@ -2,7 +2,7 @@
 
 namespace WieBenIk.Utility
 {
-    public class DontDestroyOnLoad : MonoBehaviour
+    public sealed class DontDestroyOnLoad : MonoBehaviour
     {
         private void Awake()
         {

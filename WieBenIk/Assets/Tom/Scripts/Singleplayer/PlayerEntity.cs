@@ -126,16 +126,6 @@ namespace WieBenIk.LevelCore
                     }
                 }
             }
-
-            //Select an active painting.
-            for (int i = 0; i < length; i++)
-            {
-                if(_LevelPaintings[i].ActiveInGame)
-                {
-                    _LevelPaintings[i].SetSelectedPainting(true);
-                    break;
-                }
-            }
         }
 
 

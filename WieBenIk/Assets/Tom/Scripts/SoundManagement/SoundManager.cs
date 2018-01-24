@@ -6,7 +6,7 @@ namespace WieBenIk.Sound
     public delegate void MuteMusicDelegate(bool value);
     public delegate void MuteSFX(bool value);
 
-    public class SoundManager : MonoBehaviour
+    public sealed class SoundManager : MonoBehaviour
     {
         public event MuteBackgroundMusicDelegate _MuteBackgroundMusicEvent;
         public event MuteMusicDelegate _MuteMusicEvent;

@@ -7,7 +7,7 @@ namespace WieBenIk.LevelCore
 {
     public delegate void ReturnQuestionAnswer();
 
-    public class LevelManager : MonoBehaviour
+    public sealed class LevelManager : MonoBehaviour
     {
         [SerializeField]
         private string _EndgameSceneName;
@@ -108,8 +108,6 @@ namespace WieBenIk.LevelCore
             {
                 Debug.LogWarning("ReturnQuestionAnswerEvent has 0 subscribers while getting fired!");
             }
-
-
         }
 
 

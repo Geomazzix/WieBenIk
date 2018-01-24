@@ -7,7 +7,7 @@ TODO: +Create a static class instead of a class that still uses monobehaviour.
 
 namespace WieBenIk.Utility
 {
-    public class FadeScreen : MonoBehaviour
+    public sealed class FadeScreen : MonoBehaviour
     {
         [SerializeField]
         private float _FadeSpeed;

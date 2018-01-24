@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace WieBenIk.LevelCore
 {
-    public class LevelPainting : Painting
+    public sealed class LevelPainting : Painting
     {
         private Toggle _HighlightToggle;
         private ToggleGroup _SelectedToggleGroup;

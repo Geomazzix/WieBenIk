@@ -4,7 +4,7 @@ using WieBenIk.Data;
 using System.Linq;
 
 [CreateAssetMenu(fileName = "DatabasePainting",  menuName = "DatabasePainting", order = 2)]
-public class DatabasePainting : ScriptableObject
+public sealed class DatabasePainting : ScriptableObject
 {
     [SerializeField]
     private Sprite _PaintingSprite;

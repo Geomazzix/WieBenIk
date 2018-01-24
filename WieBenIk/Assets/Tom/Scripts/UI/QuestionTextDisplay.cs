@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class QuestionTextDisplay : MonoBehaviour 
+public sealed class QuestionTextDisplay : MonoBehaviour 
 {
     [SerializeField]
     private TextMeshProUGUI _TextMeshText;

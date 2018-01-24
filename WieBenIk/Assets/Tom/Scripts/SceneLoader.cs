@@ -5,7 +5,7 @@ using WieBenIk.Utility;
 
 namespace WieBenIk.Core
 {
-    public class SceneLoader : MonoBehaviour
+    public sealed class SceneLoader : MonoBehaviour
     {
         [SerializeField]
         private FadeScreen _FadeScreen;

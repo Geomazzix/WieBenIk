@@ -5,7 +5,7 @@ using TMPro;
 
 namespace WieBenIk.LevelCore
 {
-    public class PlayerManager : PlayerEntity
+    public sealed class PlayerManager : PlayerEntity
     {
         [SerializeField]
         private TextMeshProUGUI _QuestionTextComp; 
