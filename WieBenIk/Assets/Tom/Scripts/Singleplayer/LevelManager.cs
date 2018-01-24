@@ -125,6 +125,7 @@ namespace WieBenIk.LevelCore
         //One of the players won the game.
         public void EndGame(PlayerEntity victor)
         {
+            FindObjectOfType<LevelSettings>().Winner = victor;
             FindObjectOfType<SceneLoader>().LoadSceneWithFade(_EndgameSceneName);
         }
     }

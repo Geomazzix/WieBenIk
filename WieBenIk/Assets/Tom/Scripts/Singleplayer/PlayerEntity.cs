@@ -9,6 +9,10 @@ namespace WieBenIk.LevelCore
     {
         [SerializeField]
         protected int _PlayerID;
+        public int PlayerID
+        {
+            get { return _PlayerID; }
+        }
 
         [SerializeField]
         protected LevelManager _LevelManager;

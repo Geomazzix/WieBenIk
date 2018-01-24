@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
+using WieBenIk.Core;
 
-public sealed class ConfettiSpawner : MonoBehaviour 
+namespace WieBenIk.UI
 {
-    [SerializeField]
-    private GameObject _WinnerParticles;
-
-    [SerializeField]
-    private GameObject _LoserParticles;
-
-    public void SpawnWinnerParticles(bool playerWon)
+    public sealed class ConfettiSpawner : MonoBehaviour
     {
-        if(playerWon)
+        [SerializeField]
+        private GameObject _WinnerParticles;
+
+        [SerializeField]
+        private GameObject _LoserParticles;
+
+        private void Start()
         {
-            Instantiate(_WinnerParticles, transform);
-        }
-        else
-        {
-            Instantiate(_LoserParticles, transform);
+            LevelSettings levelsettings = FindObjectOfType<LevelSettings>();
+            if(levelsettings.Winner.PlayerID == 1)
+            {
+                Instantiate(_WinnerParticles, transform);
+            }
+            else
+            {
+                Instantiate(_LoserParticles, transform);
+            }
         }
     }
 }
