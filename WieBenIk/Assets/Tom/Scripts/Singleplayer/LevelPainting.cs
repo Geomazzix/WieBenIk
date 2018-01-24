@@ -64,6 +64,7 @@ namespace WieBenIk.LevelCore
         }
 
 
+
         //When a new scene loads in handle the delegates.
         public void OnDestroy()
         {

@@ -20,6 +20,14 @@ namespace WieBenIk.Core
         public DatabasePainting[][] _Paintings;
 
 
+        private PlayerEntity _Winner;
+        public PlayerEntity Winner
+        {
+            get { return _Winner; }
+            set { _Winner = value; }
+        }
+
+
         //Set the leveldata.
         public void SetLevelData(DatabasePainting[][] paintings, DatabaseQuestion[] questions)
         {

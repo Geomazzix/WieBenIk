@@ -25,7 +25,7 @@ namespace WieBenIk.LevelCore
         {
             base.Start();
 
-            Invoke("AssignPaintingID", 0.1f);
+            Invoke("AssignPaintingID", 0.05f);
 
 
             _LevelManager.ReturnQuestionAnswerEvent += ResetPlayerActions;
