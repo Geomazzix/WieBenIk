@@ -43,4 +43,4 @@ MonoBehaviour:
     _DoesContain: 0
   - _PaintingProperty: {fileID: 11400000, guid: e5b055064d69c0442a92e344dd90048e,
       type: 2}
-    _DoesContain: 1
+    _DoesContain: 0
