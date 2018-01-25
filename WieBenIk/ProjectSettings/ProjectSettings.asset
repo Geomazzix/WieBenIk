@@ -606,7 +606,7 @@ PlayerSettings:
     Hub: 0
     UNet: 1
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 474ed1fd-9fcf-4d3f-a9fa-fbaaca03a70b
   projectName: WieBenIk
   organizationId: t-lemmers
