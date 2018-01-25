@@ -12,21 +12,21 @@ namespace WieBenIk.Sound
     [RequireComponent(typeof(AudioSource))]
     public class SoundObject : MonoBehaviour
     {
-        [SerializeField]
-        private AudioSource _AudioSource;
+        protected AudioSource _AudioSource;
         public AudioSource AudioSource
         {
             get { return _AudioSource; }
         }
 
         [SerializeField]
-        private AudioType _AudioType;
+        protected AudioType _AudioType;
 
-        private SoundManager _SoundManager;
+        protected SoundManager _SoundManager;
 
 
-        private void Start()
+        protected void Start()
         {
+            _AudioSource = GetComponent<AudioSource>();
             _SoundManager = FindObjectOfType<SoundManager>();
 
             //Set the subscribtions to the soundmanager.
@@ -42,6 +42,13 @@ namespace WieBenIk.Sound
                     _SoundManager._MuteSFX += MuteAudio;
                     break;
             }
+        }
+
+
+        //Plays the audio.
+        public void PlayAudio()
+        {
+            _AudioSource.Play();
         }
 
         //Mute the sound effect.
